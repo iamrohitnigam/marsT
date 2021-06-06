@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ user.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" *ngIf="user">
+  <ion-item>
+    <ion-icon name="person-circle" color="primary" class="icn"></ion-icon>
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ user.name }}
+      </h2>
+      <h4>
+        <ion-note>{{ user.email }}</ion-note>
+      </h4>
+    </ion-label>
+  </ion-item>
+
+  <div class="ion-padding">
+    <h1>Details</h1>
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            Username
+          </ion-col>
+          <ion-col>
+            {{ user.username }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            Street
+          </ion-col>
+          <ion-col>
+            {{user.address.street}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            City
+          </ion-col>
+          <ion-col>
+            {{user.address.city}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            Zip Code
+          </ion-col>
+          <ion-col>
+            {{user.address.zipcode}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            Company
+          </ion-col>
+          <ion-col>
+            {{user.company.name}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
